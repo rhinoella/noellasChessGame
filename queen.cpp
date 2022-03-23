@@ -17,7 +17,6 @@ queen::queen(int n) {
 
 		teamWhite = 0;
 		pieceText = 'Q';
-		team = 15;
 
 	}
 
@@ -25,7 +24,6 @@ queen::queen(int n) {
 
 		teamWhite = 1;
 		pieceText = 'Q';
-		team = 13;
 
 	}
 

@@ -9,6 +9,7 @@ using namespace std;
 int main() {
 
 	bool done = false;
+	int promotedPawns = 4;
 
 	//creating 64 square objects
 	square square[64];
@@ -57,10 +58,24 @@ int main() {
 		
 	}
 
-	vector<bishop> bishopVector{ 2 , 5 , 58 , 61 }; //the values are their starting positions- calls the overloaded constructor
-	vector<knight> knightVector{ 1 , 6 , 57 , 62 };
-	vector<rook> rookVector{ 0 , 7 , 56 , 63 };
-	vector<queen> queenVector{ 4 , 60 };
+	vector<bishop> bishopVector(16); //the values are their starting positions- calls the overloaded constructor
+	bishopVector[0] = bishop(2);
+	bishopVector[1] = bishop(5);
+	bishopVector[2] = bishop(58);
+	bishopVector[3] = bishop(61);
+	vector<knight> knightVector(16);
+	knightVector[0] = knight(1);
+	knightVector[1] = knight(6);
+	knightVector[2] = knight(57);
+	knightVector[3] = knight(62);
+	vector<rook> rookVector(16);
+	rookVector[0] = rook(0);
+	rookVector[1] = rook(7);
+	rookVector[2] = rook(56);
+	rookVector[3] = rook(63);
+	vector<queen> queenVector(16);
+	queenVector[0] = queen(4);
+	queenVector[1] = queen(60);
 	king whiteKing(3), pinkKing(59);
 
 	//putting the pieces on their starting positions and setting their font colours, storing the pointers to the object
@@ -87,10 +102,6 @@ int main() {
 	
 	square[whiteKing.getId()].setOccupantObject(&whiteKing);
 	square[pinkKing.getId()].setOccupantObject(&pinkKing);
-
-	//creating a vector of pointers for the objects that the pawns may be promoted to if they reach the other side of the board
-	vector<pieces*> promotedPawnsPtrs;
-	int promotedPawns = 0;
 
 
 	for (int k = 8; k < 16; k++) { //pawns
@@ -638,7 +649,7 @@ start:
 
 			//if a pawn reaches the other side
 
-			else if ((square[selectedPiece].getOccupantObject()->getId() < 16 && square[selectedPiece].getOccupantObject()->getId() > 7 && selectedSquare > 55) || (square[selectedPiece].getOccupantObject()->getId() > 47 && square[selectedPiece].getOccupantObject()->getId() < 56 && selectedSquare < 8))  {
+			else if ((square[selectedPiece].getOccupantObject()->getPieceText() == 'P' && selectedSquare > 55) || (square[selectedPiece].getOccupantObject()->getPieceText() == 'P' && selectedSquare < 8)) {
 
 				square[selectedSquare].setOccupantObject(square[selectedPiece].getOccupantObject()); //moving the object
 				square[selectedPiece].clearSquare(defaultPiecePtr); //clearing the square the piece was just on
@@ -678,6 +689,7 @@ start:
 
 				}
 
+
 				if (pawnChoice == 0) {
 
 					rounds++;
@@ -688,9 +700,9 @@ start:
 				else if (pawnChoice == 1) {
 
 					int l = square[selectedSquare].getOccupantObject()->getId();
-					queenVector.push_back(queen(l));
-					int k = queenVector.size() - 1;
-					square[selectedSquare].setOccupantObject(&queenVector[k]);
+					queenVector[promotedPawns] = queen(l);
+					square[selectedSquare].setOccupantObject(&queenVector[promotedPawns]);
+					promotedPawns++;
 					rounds++;
 					roundDone = true;
 
@@ -699,9 +711,9 @@ start:
 				else if (pawnChoice == 2) {
 
 					int l = square[selectedSquare].getOccupantObject()->getId();
-					bishopVector.push_back(bishop(l));
-					int k = bishopVector.size() - 1;
-					square[selectedSquare].setOccupantObject(&bishopVector[k]);
+					bishopVector[promotedPawns] = bishop(l);
+					square[selectedSquare].setOccupantObject(&bishopVector[promotedPawns]);
+					promotedPawns++;
 					rounds++;
 					roundDone = true;
 
@@ -710,9 +722,9 @@ start:
 				else if (pawnChoice == 3) {
 
 					int l = square[selectedSquare].getOccupantObject()->getId();
-					knightVector.push_back(knight(l));
-					int k = knightVector.size() - 1;
-					square[selectedSquare].setOccupantObject(&knightVector[k]);
+					knightVector[promotedPawns] = knight(l);
+					square[selectedSquare].setOccupantObject(&knightVector[promotedPawns]);
+					promotedPawns++;
 					rounds++;
 					roundDone = true;
 
@@ -721,10 +733,9 @@ start:
 				else if (pawnChoice == 4) {
 
 					int l = square[selectedSquare].getOccupantObject()->getId();
-					rookVector.push_back(rook(l));
-					int k = rookVector.size() - 1;
-					square[selectedSquare].setOccupantObject(&rookVector[k]);
-					rounds++;
+					rookVector[promotedPawns] = rook(l);
+					square[selectedSquare].setOccupantObject(&rookVector[promotedPawns]);
+					promotedPawns++;
 					roundDone = true;
 
 				}

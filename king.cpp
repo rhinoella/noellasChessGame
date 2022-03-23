@@ -17,7 +17,6 @@ king::king(int n) {
 
 		teamWhite = 0;
 		pieceText = 'K';
-		team = 15;
 
 	}
 
@@ -25,7 +24,6 @@ king::king(int n) {
 
 		teamWhite = 1;
 		pieceText = 'K';
-		team = 13;
 
 	}
 

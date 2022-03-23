@@ -23,7 +23,6 @@ protected :
 	int teamWhite; //what team the piece is- true is white, false is pink
 	char pieceText; //the text for the piece
 	int id; //the id of the piece (will be its starting point on the grid)
-	int team;
 
 };
 

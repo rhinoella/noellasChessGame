@@ -18,6 +18,7 @@ public:
 	void setSquareGray(int i, int k);
 
 	void setOccupantObject(pieces* pointer);
+
 	void clearSquare(pieces* defaultPiecePtr); //will clear the square after a piece has left it
 
 	pieces* getOccupantObject();

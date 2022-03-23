@@ -17,7 +17,6 @@ knight::knight(int n) {
 
 		teamWhite = 0;
 		pieceText = 'k';
-		team = 15;
 
 	}
 
@@ -25,7 +24,6 @@ knight::knight(int n) {
 
 		teamWhite = 1;
 		pieceText = 'k';
-		team = 13;
 
 	}
 

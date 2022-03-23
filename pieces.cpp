@@ -8,7 +8,6 @@ pieces::pieces() {
 
 	teamWhite = 3; //0 is white, 1 is pink, 3 is empty
 	pieceText = ' ';
-	team = 15;
 
 }
 
@@ -20,17 +19,6 @@ bool pieces::move(int selectedPiece, int selectedSquare, int teamWhite, int turn
 
 	bool move = false;
 	return move;
-
-}
-
-
-void pieces::printPiece() {
-
-	//for coloured text formatting
-	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
-	SetConsoleTextAttribute(h, team);
-	cout << getPieceText();
 
 }
 

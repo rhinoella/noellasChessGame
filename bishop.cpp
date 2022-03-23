@@ -18,7 +18,6 @@ bishop::bishop(int n) {
 
 		teamWhite = 0;
 		pieceText = 'B';
-		team = 15;
 
 	}
 
@@ -26,7 +25,6 @@ bishop::bishop(int n) {
 
 		teamWhite = 1;
 		pieceText = 'B';
-		team = 13;
 
 	}
 

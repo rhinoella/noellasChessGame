@@ -17,7 +17,6 @@ rook::rook(int n) {
 
 		teamWhite = 0;
 		pieceText = 'R';
-		team = 15;
 
 	}
 
@@ -25,7 +24,6 @@ rook::rook(int n) {
 
 		teamWhite = 1;
 		pieceText = 'R';
-		team = 13;
 
 	}
 
