@@ -6,7 +6,7 @@ using namespace std;
 
 pieces::pieces() {
 
-	teamWhite = 3; //0 is white, 1 is pink, 3 is empty
+	teamWhite = 3;
 	pieceText = ' ';
 
 }
@@ -15,7 +15,7 @@ pieces::~pieces() {
 
 }
 
-bool pieces::move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k) {
+bool pieces::move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k, int ii, int kk) {
 
 	bool move = false;
 	return move;

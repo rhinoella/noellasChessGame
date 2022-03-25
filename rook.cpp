@@ -34,19 +34,19 @@ rook::~rook() {
 
 }
 
-bool rook::move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k) {
+bool rook::move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k, int ii, int kk) {
 	//to check whether or not the piece is allowed to move to the selected square
 
-	if (( selectedSquare > 8 * i && selectedSquare < ((i - 1) * (8)) + 1 && selectedSquare - selectedPiece % 8 != 0) || teamWhite == turnTeamWhite) {
+	if ((ii == i || kk == k) && teamWhite != turnTeamWhite) {
 
-		bool move = false;
+		bool move = true;
 		return move;
 
 	}
 
-	else {
+	else{
 
-		bool move = true;
+		bool move = false;
 		return move;
 
 	}

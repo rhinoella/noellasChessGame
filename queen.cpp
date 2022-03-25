@@ -34,7 +34,7 @@ queen::~queen() {
 
 }
 
-bool queen::move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k) {
+bool queen::move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k, int ii, int kk) {
 
 	//to check whether or not the piece is allowed to move to the selected square
 

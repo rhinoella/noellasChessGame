@@ -433,7 +433,7 @@ start:
 				char pieceText = square[selectedPiece].getOccupantObject()->getPieceText();
 
 				//checking if there are obstructions in the path for all pieces that can move more than one square at a time and that they are moving more than one square
-				if ((pieceText == 'P' || pieceText == 'Q' || pieceText == 'R' || pieceText == 'k' || pieceText == 'B') && abs(ii - i) != 1 && abs(kk - k) != 1) { //abs()- absolute value function
+				if ((pieceText == 'P' || pieceText == 'Q' || pieceText == 'R' || pieceText == 'B') && abs(ii - i) != 1 && abs(kk - k) != 1) { //abs()- absolute value function
 
 					//diagonal movements
 					if ((selectedSquare - selectedPiece) % 9 == 0) {
@@ -612,7 +612,7 @@ start:
 				else moveNotObstructed = true;
 
 				int teamWhite = square[selectedSquare].getOccupantObject()->getTeam();
-				moveLegal = square[selectedPiece].getOccupantObject()->move(selectedPiece, selectedSquare, teamWhite, turnTeamWhite, i, k);
+				moveLegal = square[selectedPiece].getOccupantObject()->move(selectedPiece, selectedSquare, teamWhite, turnTeamWhite, i, k, ii, kk);
 
 				if (moveNotObstructed == false) {
 

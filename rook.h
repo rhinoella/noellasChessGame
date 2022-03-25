@@ -13,7 +13,7 @@ public:
 
 	~rook();
 
-	bool move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k) override;
+	bool move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k, int ii, int kk) override;
 
 protected:
 

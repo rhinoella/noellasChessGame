@@ -11,7 +11,7 @@ public :
 	pieces();
 	virtual ~pieces();
 
-	virtual bool move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k); //checks the legality of the move
+	virtual bool move(int selectedPiece, int selectedSquare, int teamWhite, int turnTeamWhite, int i, int k, int ii, int kk); //checks the legality of the move
 	void printPiece();
 
 	char getPieceText();
